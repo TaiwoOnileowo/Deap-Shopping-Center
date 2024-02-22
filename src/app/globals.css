@@ -784,10 +784,10 @@ span.text-red {
     top: 6%;
     height: 58%;
   }
-  .left{
+  .left {
     width: 400px;
   }
-  .left{
+  .left {
     width: 400px;
   }
   /* .banner-desc{} */
@@ -941,7 +941,7 @@ span.text-red {
   }
 }
 
-@media screen and (min-width: 705px) and (max-width: 1200px){
+@media screen and (min-width: 705px) and (max-width: 1200px) {
   .left {
     width: 5000px;
   }
@@ -954,5 +954,14 @@ span.text-red {
   }
   .footer-banner-image {
     top: 0%;
+  }
+  .hero-banner-image {
+    width: 50%;
+    height: 65%;
+    top: -3%;
+    right: 0%;
+  }
+  .banner-text {
+    margin-top: 100px;
   }
 }
