@@ -20,8 +20,8 @@ const FooterBanner = ({ footerBanner }) => {
             <button type="button">{footerBanner?.buttonText}</button>
           </Link>
         </div>
-        < Image src={footerBanner&& urlForImage(footerBanner && footerBanner?.image)} className="footer-banner-image" alt="DEAP headphone" priority={true} width={555} height={555} />
       </div>
+        < Image src={footerBanner&& urlForImage(footerBanner && footerBanner?.image)} className="footer-banner-image" alt="DEAP headphone" priority={true} width={555} height={555} />
     </div>
   );
 };

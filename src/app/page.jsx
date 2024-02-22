@@ -26,7 +26,7 @@ const Home =  () => {
       <HeroBanner heroBanner={data?.props.bannerData.length && data?.props.bannerData[0]} />
       <div className="products-heading">
         <h2>Best Selling Products</h2>
-        <p>Headphones That Improve Your Music Experience</p>
+        <p>Just One Click Away!</p>
          
       </div>
 
