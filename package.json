@@ -28,6 +28,7 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
+    "react-typed": "^2.0.12",
     "sanity": "^3.28.0",
     "sharp": "^0.33.2",
     "stripe": "^14.16.0",

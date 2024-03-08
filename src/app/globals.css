@@ -176,13 +176,15 @@ span.text-red {
   font-size: 4rem;
   margin-top: 4px;
 }
-.hero-banner-container h1 {
+.large-text {
   color: white;
-  font-size: 5em;
+  font-size: 5.5em;
   padding-top: 5px;
   margin-left: -20px;
   text-transform: uppercase;
+  font-weight: 700;
 }
+
 .hero-banner-image {
   position: absolute;
   top: 0%;

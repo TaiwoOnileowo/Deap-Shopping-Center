@@ -21,7 +21,7 @@ const FooterBanner = ({ footerBanner }) => {
           </Link>
         </div>
       </div>
-        < Image src={footerBanner&& urlForImage(footerBanner && footerBanner?.image)} className="footer-banner-image" alt="DEAP headphone" priority={true} width={555} height={555} />
+        < Image src={footerBanner&& urlForImage(footerBanner && footerBanner?.image)} className="footer-banner-image" alt="DEAP headphone" width={555} height={555} />
     </div>
   );
 };
