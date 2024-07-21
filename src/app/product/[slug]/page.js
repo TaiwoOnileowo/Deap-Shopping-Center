@@ -15,8 +15,9 @@ const ProductDetails = (params) => {
   const [index, setIndex] = useState(0);
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
-  const [selectedProductImage, setSelectedProductImage]= useState(null)
-  const { decQty, incQty, qty, onAdd ,setShowCart,cartImage,setCartImage} = useStateContext();
+  const [selectedProductImage, setSelectedProductImage] = useState(null);
+  const { decQty, incQty, qty, onAdd, setShowCart, cartImage, setCartImage } =
+    useStateContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +25,6 @@ const ProductDetails = (params) => {
         const data = await getProductData(params);
         setProducts(data.products);
         setProduct(data.product);
-        // console.log(data);
       } catch (error) {
         console.error("Error fetching product data:", error);
       }
@@ -32,22 +32,24 @@ const ProductDetails = (params) => {
 
     fetchData();
   }, [params]);
-  useEffect(()=>{
-    const savedSelectedProductImage= JSON.parse(localStorage.getItem("selectedProductImage"))
-    setSelectedProductImage(savedSelectedProductImage)
-  },[])
-  
-  const handleBuyNow=()=>{
-    onAdd(product,qty);
-    setShowCart(true)
-  }
-  const filteredProducts = products.filter(p => p._id !== product._id);
-  
+  useEffect(() => {
+    const savedSelectedProductImage = JSON.parse(
+      localStorage.getItem("selectedProductImage")
+    );
+    setSelectedProductImage(savedSelectedProductImage);
+  }, []);
+
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
+  const filteredProducts = products.filter((p) => p._id !== product._id);
+
   return (
     <div>
       <div className="product-detail-container">
         {selectedProductImage && (
-        <div>
+          <div>
             <div className="product-detail-image-div">
               <Image
                 src={urlForImage(selectedProductImage[index])}
@@ -60,28 +62,28 @@ const ProductDetails = (params) => {
             <div className="small-images-container">
               {selectedProductImage?.map((item, i) => (
                 <div className="small-image-container" key={item.key}>
-                 
-                <Image
-                  
-                  src={urlForImage(item)}
-                  className={
-                    i === index ? "small-image selected-image" : "small-image"
-                  }
-                  width={80}
-                  height={80}
-                  alt="Other Image"
-                  onMouseEnter={() =>{
-                    setIndex(i)
-                    setCartImage(selectedProductImage[i])
-                    localStorage.setItem('cartImage', JSON.stringify(cartImage))
-                   
-                  }}
+                  <Image
+                    src={urlForImage(item)}
+                    className={
+                      i === index ? "small-image selected-image" : "small-image"
+                    }
+                    width={80}
+                    height={80}
+                    alt="Other Image"
+                    onMouseEnter={() => {
+                      setIndex(i);
+                      setCartImage(selectedProductImage[i]);
+                      localStorage.setItem(
+                        "cartImage",
+                        JSON.stringify(cartImage)
+                      );
+                    }}
                   />
-                  </div>
+                </div>
               ))}
             </div>
-        </div>
-          )}
+          </div>
+        )}
         <div className="product-detail-desc">
           <h1>{product?.name}</h1>
           <div className="reviews">
@@ -112,11 +114,11 @@ const ProductDetails = (params) => {
               <button
                 className="add-to-cart"
                 type="button"
-                onClick={()=>onAdd(product, qty)}
+                onClick={() => onAdd(product, qty)}
               >
                 Add To Cart
               </button>
-              <button className="buy-now" type="button" onClick={handleBuyNow} >
+              <button className="buy-now" type="button" onClick={handleBuyNow}>
                 Buy Now
               </button>
             </div>
